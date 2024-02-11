@@ -25,13 +25,18 @@ class MyForm extends Component {
   
     render() {
       return (
+        <center>
+        <div style={{ height: '100px', width: '200px', background: 'white' }}>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Username" />
-        <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email" />
-        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
+          <center>
+          <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Username" /> <br/>
+        <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email" /> <br/>
+        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" /> <br/>
         <button type="submit">Submit</button>
-          
+        </center>
         </form>
+        </div>
+        </center>
       );
     }
   }
