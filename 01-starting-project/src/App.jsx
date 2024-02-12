@@ -4,6 +4,13 @@ import statemgmt from './assets/state-mgmt.png';
 const reactDescription=['Fundamental','Crucial','Core']
 import Counter from './Counter';
 import Person from './Person.jsx';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import NoPage from "./pages/NoPage";
 function getRandomInt(max){
   return Math.floor(Math.random() * (max+1));
 }
@@ -40,6 +47,16 @@ function App() {
   return (
     <div>
       <header>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
       <Firstcomp></Firstcomp>
         <main>
           <section id="core-concepts">
@@ -48,6 +65,7 @@ function App() {
             <CoreConcept title="Components2" description="Core UI2" image={reactimg}></CoreConcept>
             <CoreConcept title="Components3" description="Core UI3" image={statemgmt}></CoreConcept>
             <Person/>
+            
             </ul>
           </section>
       </main>
